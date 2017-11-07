@@ -2,7 +2,7 @@ function BMICalculator(){
 };
 
 
-function setBMIMessage (obj){
+function setBMIMessage (obj){ //contidional function statement, it is used to compare the object's input
   if (obj.bmiValue < 18.5) {
     obj.bmiMessage = "Underweight"
   }
@@ -21,9 +21,9 @@ function setBMIMessage (obj){
 BMICalculator.prototype.metric_bmi = function(obj) {
   var weight = obj.weight;
   var height = obj.height;
-  if (weight > 0 && height > 0) {
+  if (weight > 0 && height > 0) { //conditional statement to check for the validity of the input
     var finalBmi = weight / (height / 100 * height / 100);
     obj.bmiValue =  parseFloat(finalBmi.toFixed(2));
-    setBMIMessage(obj);
+    setBMIMessage(obj); //run the function and return a message based on input
   }
 };
