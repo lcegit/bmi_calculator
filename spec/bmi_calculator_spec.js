@@ -1,4 +1,4 @@
-describe("BMICalculator", function() {
+describe("BMICalculator", function() { 
   var calculator;
   var person;
 

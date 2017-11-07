@@ -18,7 +18,7 @@ function setBMIMessage (obj){ //contidional function statement, it is used to co
 }
 
 
-BMICalculator.prototype.metric_bmi = function(obj) {
+BMICalculator.prototype.metric_bmi = function(obj) { //chains the function metric_bmi(obj) to BMICalculator throught the prototype property
   var weight = obj.weight;
   var height = obj.height;
   if (weight > 0 && height > 0) { //conditional statement to check for the validity of the input
