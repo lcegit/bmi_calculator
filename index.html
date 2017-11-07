@@ -9,16 +9,17 @@
     <script src="http://example.com/script.js"></script>
 
 <script type="text/javascript">
-  $(document).ready(function () { //readyness function runs once the DOM is ready for js
-    $('#calculate').click(function () {
-      var w = parseFloat($('#weight').val()); // .val allows for setting values in form elements, parseFloat parses the argument and returns a float, otherwise this would return undefined
-      var h = parseFloat($('#height').val());
-      var person = new Person({weight: w, height: h});
-      person.calculate_bmi(); // calls the person prototype to run the calculate_bmi method
-      $('#display_value').html('Your BMI is ' + person.bmiValue); // edits presentation layer
-      $('#display_message').html('and you are '+ person.bmiMessage);
-    });
+$(document).ready(function() {
+  //readyness function runs once the DOM is ready for js
+  $('#calculate').click(function() {
+    var w = parseFloat($('#weight').val()); // .val allows for setting values in form elements, parseFloat parses the argument and returns a float, otherwise this would return undefined
+    var h = parseFloat($('#height').val());
+    var person = new Person({ weight: w, height: h });
+    person.calculate_bmi(); // calls the person prototype to run the calculate_bmi method
+    $('#display_value').html('Your BMI is ' + person.bmiValue); // edits presentation layer
+    $('#display_message').html('and you are ' + person.bmiMessage);
   });
+});
 </script>
 
 <noscript>
@@ -31,7 +32,11 @@
       <input type="text" id="weight" placeholder="Weight">
       <input type="text" id="height" placeholder="Height">
       <input type="button" id="calculate" value="Calculate">
+      <input type="radio" id="metric" value="Calculate metric">
+      <input type="radio" id="imperial" value="Calculate imperial">
+
     </form>
+
     <div>
       <span id="display_value"></span>
       <span id="display_message"></span>
