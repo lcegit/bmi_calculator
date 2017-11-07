@@ -27,7 +27,7 @@ BMICalculator.prototype.metric_bmi = function(obj) { //chains the function metri
   }
 };
 
-/*
+
 BMICalculator.prototype.imperial_bmi = function(obj) {
   var weight = obj.weight;
   var height = obj.height;
@@ -37,4 +37,3 @@ BMICalculator.prototype.imperial_bmi = function(obj) {
     setBMIMessage(obj);
   }
 };
-*/
