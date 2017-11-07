@@ -17,7 +17,6 @@ function setBMIMessage (obj){ //contidional function statement, it is used to co
   }
 }
 
-
 BMICalculator.prototype.metric_bmi = function(obj) { //chains the function metric_bmi(obj) to BMICalculator throught the prototype property
   var weight = obj.weight;
   var height = obj.height;
@@ -28,7 +27,7 @@ BMICalculator.prototype.metric_bmi = function(obj) { //chains the function metri
   }
 };
 
-
+/*
 BMICalculator.prototype.imperial_bmi = function(obj) {
   var weight = obj.weight;
   var height = obj.height;
@@ -38,3 +37,4 @@ BMICalculator.prototype.imperial_bmi = function(obj) {
     setBMIMessage(obj);
   }
 };
+*/
