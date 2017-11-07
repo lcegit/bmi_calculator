@@ -25,7 +25,7 @@ describe("Person", function() {
       expect(person.bmiMessage).toEqual("Overweight")
     });
   });
-});
+
 
   describe("Imperial method", function() {
     beforeEach(function() {
@@ -50,6 +50,5 @@ describe("Person", function() {
       expect(person.bmiMessage).toEqual("Overweight")
     });
 
-  });
   });
 });
