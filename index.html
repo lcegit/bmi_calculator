@@ -39,18 +39,18 @@
       <div class="tabs-panel" id="imperial-panel">
         <form>
           <input type="text" id="weight-imperial" placeholder="Weight in lbs">
-          <input type="text" id="height-imerial" placeholder="Height in inches">
+          <input type="text" id="height-imperial" placeholder="Height in inches">
           <input type="button" id="calculate-imperial" value="Calculate" class="button">
         </form>
         <div>
-          <span id="display_value_imperial"></span>
-          <span id="display_message_imperial"></span>
+          <span id="display_imperial_value"></span>
+          <span id="display_imperial_message"></span>
         </div>
       </div>
     </div>
 
     <script type="text/javascript">
-    $(document).foundation();
+$(document).foundation();
 $(document).ready(function() {
   $('#calculate-metric').click(function() {
     var w = parseFloat($('#weight-metric').val()); // .val allows for setting values in form elements, parseFloat parses the argument and returns a float, otherwise this would return undefined
@@ -67,13 +67,14 @@ $(document).ready(function() {
   $('#calculate-imperial').click(function() {
     var w = parseFloat($('#weight-imperial').val()); // .val allows for setting values in form elements, parseFloat parses the argument and returns a float, otherwise this would return undefined
     var h = parseFloat($('#height-imperial').val());
+    debugger;
     var person = new Person({
       weight: w,
       height: h
     });
     person.calculate_imperial_bmi(); // calls the person prototype to run the calculate_bmi method
-    $('#display_value_imperial').html('Your BMI is ' + person.bmiValue); // edits presentation layer
-    $('#display_message_imperial').html('and you are ' + person.bmiMessage);
+    $('#display_imperial_value').html('Your BMI is ' + person.bmiValue); // edits presentation layer
+    $('#display_imperial_message').html('and you are ' + person.bmiMessage);
   });
 });
 </script>
