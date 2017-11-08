@@ -1,46 +1,83 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>BMI calculator</title>
     <script src="src/person.js"></script>
     <script src="src/bmi_calculator.js"></script>
-    <script src='https://code.jquery.com/jquery-2.1.4.js'></script>
-    <script src="http://example.com/script.js"></script>
-
-<script type="text/javascript">
-$(document).ready(function() {
-  //readyness function runs once the DOM is ready for js
-  $('#calculate').click(function() {
-    var w = parseFloat($('#weight').val()); // .val allows for setting values in form elements, parseFloat parses the argument and returns a float, otherwise this would return undefined
-    var h = parseFloat($('#height').val());
-    var person = new Person({ weight: w, height: h });
-    person.calculate_bmi(); // calls the person prototype to run the calculate_bmi method
-    $('#display_value').html('Your BMI is ' + person.bmiValue); // edits presentation layer
-    $('#display_message').html('and you are ' + person.bmiMessage);
-  });
-});
-</script>
-
-<noscript>
-    <meta http-equiv="refresh" content="0; URL=http://example.com/noscript.html"/>
-</noscript>
-
+    <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+    <!--  <script src="http://example.com/script.js"></script> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.js"></script>
   </head>
+
   <body>
-    <form>
-      <input type="text" id="weight" placeholder="Weight">
-      <input type="text" id="height" placeholder="Height">
-      <input type="button" id="calculate" value="Calculate">
-      <input type="radio" id="metric" value="Calculate metric">
-      <input type="radio" id="imperial" value="Calculate imperial">
+    <div class="row columns">
+      <div class="small-2 large-4 columns">
 
-    </form>
-
-    <div>
-      <span id="display_value"></span>
-      <span id="display_message"></span>
-
+        <ul class="tabs" data-tabs id="tabs">
+          <li class="tabs-title is-active"><a href="#metric-panel" aria-selected="true">Metric calc</a></li>
+          <li class="tabs-title"><a data-tabs-target="imperial-panel" href="#imperial-panel">Imperial calc</a></li>
+        </ul>
+      </div>
     </div>
+
+    <div class="tabs-content" data-tabs-content="tabs">
+      <div class="tabs-panel is-active" id="metric-panel">
+        <form>
+          <input type="text" id="weight-metric" placeholder="Weight in kg">
+          <input type="text" id="height-metric" placeholder="Height in cm">
+          <input type="button" id="calculate-metric" value="Calculate" class="button">
+        </form>
+        <div>
+          <span id="display_value_metric"></span>
+          <span id="display_message_metric"></span>
+        </div>
+      </div>
+
+      <div class="tabs-panel" id="imperial-panel">
+        <form>
+          <input type="text" id="weight-imperial" placeholder="Weight in lbs">
+          <input type="text" id="height-imerial" placeholder="Height in inches">
+          <input type="button" id="calculate-imperial" value="Calculate" class="button">
+        </form>
+        <div>
+          <span id="display_value_imperial"></span>
+          <span id="display_message_imperial"></span>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      $(document).foundation();
+      $(document).ready(function() {
+        $('#calculate-metric').click(function() {
+          var w = parseFloat($('#weight-metric').val()); // .val allows for setting values in form elements, parseFloat parses the argument and returns a float, otherwise this would return undefined
+          var h = parseFloat($('#height-metric').val());
+          var person = new Person({
+            weight: w,
+            height: h
+          });
+          person.calculate_metric_bmi(); // calls the person prototype to run the calculate_bmi method
+          $('#display_value_metric').html('Your BMI is ' + person.bmiValue); // edits presentation layer
+          $('#display_message_metric').html('and you are ' + person.bmiMessage);
+        });
+
+        $('#calculate-imperial').click(function() {
+          var w = parseFloat($('#weight-imperial').val()); // .val allows for setting values in form elements, parseFloat parses the argument and returns a float, otherwise this would return undefined
+          var h = parseFloat($('#height-imperial').val());
+          var person = new Person({
+            weight: w,
+            height: h
+          });
+          person.calculate_imperial_bmi(); // calls the person prototype to run the calculate_bmi method
+          $('#display_value_imperial').html('Your BMI is ' + person.bmiValue); // edits presentation layer
+          $('#display_message_imperial').html('and you are ' + person.bmiMessage);
+        });
+      });
+    </script>
+
   </body>
+
 </html>
