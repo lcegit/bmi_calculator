@@ -19,7 +19,7 @@
 
     <div class="grid-x">
 
-      <div class="medium-6 large-4 cell"></div>
+      <div class="medium-6 large-3 cell"></div>
       <div class="medium-6 large-4 cell">
 
         <ul class="tabs" data-tabs id="tabs">
@@ -44,7 +44,9 @@
       <div class="tabs-panel" id="imperial-panel">
         <form>
           <input type="text" id="weight-imperial" placeholder="Weight in lbs">
-          <input type="text" id="height-imperial" placeholder="Height in inches">
+          <input type="text" id="height-ft-imperial" placeholder="Height in ft">
+          <input type="text" id="height-in-imperial" placeholder="Height in inches">
+
           <input type="button" id="calculate-imperial" value="Calculate" class="button">
         </form>
         <div>
@@ -64,7 +66,7 @@
           <tbody>
             <tr>
               <td>Thin class</td>
-              <td>> 16 - 18.5</td>
+              <td> > 16 - 18.5</td>
             </tr>
             <tr>
               <td>Normal</td>
@@ -80,14 +82,14 @@
             </tr>
             <tr>
               <td>Obesity class</td>
-              <td>> 35</td>
+              <td> > 35</td>
             </tr>
           </table>
       </div>
     </div>
   </div>
 </div>
-<div class="medium-6 large-4 cell"></div>
+<div class="medium-6 large-3 cell"></div>
 </div>
 
     <script type="text/javascript">
@@ -107,18 +109,20 @@ $(document).ready(function() {
 
   $('#calculate-imperial').click(function() {
     var w = parseFloat($('#weight-imperial').val()); // .val allows for setting values in form elements, parseFloat parses the argument and returns a float, otherwise this would return undefined
-    var h = parseFloat($('#height-imperial').val());
-    debugger;
+    var h_ft = parseFloat($('#height-ft-imperial').val());
+    var h_in = parseFloat($('#height-in-imperial').val());
     var person = new Person({
       weight: w,
-      height: h
+      height: (h_ft * 12) + h_in
     });
     person.calculate_imperial_bmi(); // calls the person prototype to run the calculate_bmi method
     $('#display_imperial_value').html('Your BMI is ' + person.bmiValue); // edits presentation layer
     $('#display_imperial_message').html('and you are ' + person.bmiMessage);
   });
 });
+
 </script>
+
 
   </body>
 

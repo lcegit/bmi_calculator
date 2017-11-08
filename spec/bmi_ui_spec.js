@@ -30,7 +30,7 @@ describe('BMI_UI_imperial - index.html', function() {
   });
 
   it('displays BMI Value', function() {
-    expect($('#display_imperial_value').text()).toBe('Your BMI is 26.01');
+    expect($('#display_imperial_value').text()).toBe('Your BMI is 26.02');
   });
 
   it('displays BMI Message', function() {
