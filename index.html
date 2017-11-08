@@ -55,7 +55,6 @@ $(document).ready(function() {
   $('#calculate-metric').click(function() {
     var w = parseFloat($('#weight-metric').val()); // .val allows for setting values in form elements, parseFloat parses the argument and returns a float, otherwise this would return undefined
     var h = parseFloat($('#height-metric').val());
-    debugger;
     var person = new Person({
       weight: w,
       height: h

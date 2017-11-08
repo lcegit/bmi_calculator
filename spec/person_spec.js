@@ -30,11 +30,11 @@ describe('Person', function() {
       person = new Person({ weight: 198.41, height: 73.22 });
     });
 
-    it('should have weight of 90', function() {
+    it('should have weight of 198.41', function() {
       expect(person.weight).toEqual(198.41);
     });
 
-    it('should have height of 186', function() {
+    it('should have height of 73.22', function() {
       expect(person.height).toEqual(73.22);
     });
 
