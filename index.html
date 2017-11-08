@@ -13,15 +13,20 @@
   </head>
 
   <body>
-    <div class="row columns">
-      <div class="small-2 large-4 columns">
+
+<div class="row">
+
+
+    <div class="grid-x">
+
+      <div class="medium-6 large-4 cell"></div>
+      <div class="medium-6 large-4 cell">
 
         <ul class="tabs" data-tabs id="tabs">
           <li class="tabs-title is-active"><a href="#metric-panel" aria-selected="true">Metric calc</a></li>
           <li class="tabs-title"><a data-tabs-target="imperial-panel" href="#imperial-panel">Imperial calc</a></li>
+          <li class="tabs-title"><a data-tabs-target="measurement-panel" href="#measurement-panel">Measurement chart</a></li>
         </ul>
-      </div>
-    </div>
 
     <div class="tabs-content" data-tabs-content="tabs">
       <div class="tabs-panel is-active" id="metric-panel">
@@ -47,7 +52,43 @@
           <span id="display_imperial_message"></span>
         </div>
       </div>
+
+      <div class="tabs-panel" id="measurement-panel">
+      <table>
+            <thead>
+            <tr>
+              <th width="250">Category</th>
+              <th width="250">BMI range - kg/m2</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Thin class</td>
+              <td>> 16 - 18.5</td>
+            </tr>
+            <tr>
+              <td>Normal</td>
+              <td>18.5 - 25</td>
+            </tr>
+            <tr>
+              <td>A little on the plus side</td>
+              <td>25 - 30</td>
+            </tr>
+            <tr>
+              <td>Nearing obesity</td>
+              <td>30 - 35</td>
+            </tr>
+            <tr>
+              <td>Obesity class</td>
+              <td>> 35</td>
+            </tr>
+          </table>
+      </div>
     </div>
+  </div>
+</div>
+<div class="medium-6 large-4 cell"></div>
+</div>
 
     <script type="text/javascript">
 $(document).foundation();
