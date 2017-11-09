@@ -1,5 +1,4 @@
 function Person(attr) {
-  //"initialize" Person
   this.weight = attr.weight;
   this.height = attr.height;
 }
@@ -11,6 +10,6 @@ Person.prototype.calculate_metric_bmi = function() {
 };
 
 Person.prototype.calculate_imperial_bmi = function() {
-  calculator = new BMICalculator(); // initialize method and store it in a variable
-  calculator.imperial_bmi(this); //call variable and run imperial_bmi on the object itself / "self"
+  calculator = new BMICalculator();
+  calculator.imperial_bmi(this);
 };

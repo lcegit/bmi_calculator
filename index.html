@@ -18,9 +18,9 @@
 
 
     <div class="grid-x">
-
+    <div class="cell"></div>
       <div class="medium-6 large-3 cell"></div>
-      <div class="medium-6 large-4 cell">
+      <div class="medium-6 large-5 cell">
 
         <ul class="tabs" data-tabs id="tabs">
           <li class="tabs-title is-active"><a href="#metric-panel" aria-selected="true">Metric calc</a></li>
@@ -103,20 +103,20 @@ $(document).ready(function() {
       height: h
     });
     person.calculate_metric_bmi(); // calls the person prototype to run the calculate_bmi method
-    $('#display_metric_value').html('Your BMI is ' + person.bmiValue); // edits presentation layer
+    $('#display_metric_value').html('Your BMI is ' + person.bmiValue);
     $('#display_metric_message').html('and you are ' + person.bmiMessage);
   });
 
   $('#calculate-imperial').click(function() {
-    var w = parseFloat($('#weight-imperial').val()); // .val allows for setting values in form elements, parseFloat parses the argument and returns a float, otherwise this would return undefined
+    var w = parseFloat($('#weight-imperial').val());
     var h_ft = parseFloat($('#height-ft-imperial').val());
     var h_in = parseFloat($('#height-in-imperial').val());
     var person = new Person({
       weight: w,
       height: (h_ft * 12) + h_in
     });
-    person.calculate_imperial_bmi(); // calls the person prototype to run the calculate_bmi method
-    $('#display_imperial_value').html('Your BMI is ' + person.bmiValue); // edits presentation layer
+    person.calculate_imperial_bmi();
+    $('#display_imperial_value').html('Your BMI is ' + person.bmiValue);
     $('#display_imperial_message').html('and you are ' + person.bmiMessage);
   });
 });

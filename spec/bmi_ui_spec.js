@@ -25,7 +25,8 @@ describe('BMI_UI_imperial - index.html', function() {
     $.holdReady(false);
     $('.tabs-title:contains("Imperial")').click();
     $('#weight-imperial').val('198.41');
-    $('#height-imperial').val('73.22');
+    $('#height-ft-imperial').val('6');
+    $('#height-in-imperial').val('0.1');
     $('#calculate-imperial').trigger('click');
   });
 
