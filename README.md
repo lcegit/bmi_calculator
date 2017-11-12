@@ -10,3 +10,8 @@ The challenge was to set up a BMI calculator program that returns given the user
 # My solution #
 
 [BMI calculator](https://lcegit.github.io/bmi_calculator/)
+
+
+## Resources ##
+
+CraftAcademy course material, input from coaches, Foundation. 
